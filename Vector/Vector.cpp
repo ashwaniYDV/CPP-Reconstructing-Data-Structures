@@ -42,6 +42,8 @@ int main() {
     std::cout << data2.Size() << std::endl;
     PrintVector(data2);
 
+    std::cout << std::endl << std::endl;
+
     Vector<st> data3;
     st structData = {3, 4};
     data3.PushBack({1, 2});
@@ -55,6 +57,7 @@ int main() {
     }
     return 0;
 }
+
 
 
 
@@ -91,6 +94,8 @@ C++
 C
 Java
 ------------------
+
+
 5
 1 2
 3 4
