@@ -9,6 +9,10 @@ void PrintVector(const Vector<T>& vector) {
     std::cout << "------------------" << std::endl;
 }
 
+struct st {
+    int a, b;
+};
+
 int main() {
     Vector<std::string> data1;
     data1.PushBack("ashwani");
@@ -37,8 +41,21 @@ int main() {
     data2.PushBack("Java");
     std::cout << data2.Size() << std::endl;
     PrintVector(data2);
+
+    Vector<st> data3;
+    st structData = {3, 4};
+    data3.PushBack({1, 2});
+    data3.PushBack({3, 4});
+    data3.PushBack({1, 2});
+    data3.EmplaceBack((st){3, 4});
+    data3.EmplaceBack(structData);
+    std::cout << data3.Size() << std::endl;
+    for(int i = 0; i < data3.Size(); ++i) {
+        std::cout << data3[i].a << " " << data3[i].b << std::endl;
+    }
     return 0;
 }
+
 
 
 /*
@@ -74,4 +91,10 @@ C++
 C
 Java
 ------------------
+5
+1 2
+3 4
+1 2
+3 4
+3 4
 */
