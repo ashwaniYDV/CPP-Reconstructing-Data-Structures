@@ -127,16 +127,19 @@ int main() {
     for (int i = 0; i < a.Size(); i++) {
         cout << a[i] << endl;
     }
+    cout << endl;
 
     Vector<std::string> aCopy = a;
     aCopy[0] = "ash";
     for (int i = 0; i < a.Size(); i++) {
         cout << aCopy[i] << endl;
     }
+    cout << endl;
 
     for (int i = 0; i < a.Size(); i++) {
         cout << a[i] << endl;
     }
+    cout << endl;
 
     Vector<int> b(3);
     b[0] = 2;
@@ -145,6 +148,7 @@ int main() {
     for (int i = 0; i < b.Size(); i++) {
         cout << b[i] << endl;
     }
+    cout << endl;
 
     Vector<line> c;
     line l1 = {2, 3};
@@ -156,5 +160,21 @@ int main() {
     for (int i = 0; i < c.Size(); i++) {
         cout << c[i].x << " " << c[i].y << endl;
     }
+    cout << endl;
+
+    Vector<line> cCopy = c;
+    l1 = { -2, -3};
+    cCopy[0] = l1;
+
+    for (int i = 0; i < cCopy.Size(); i++) {
+        cout << cCopy[i].x << " " << cCopy[i].y << endl;
+    }
+    cout << endl;
+
+    for (int i = 0; i < c.Size(); i++) {
+        cout << c[i].x << " " << c[i].y << endl;
+    }
+    cout << endl;
+
     return 0;
 }
