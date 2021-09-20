@@ -73,6 +73,16 @@ public:
         return m_Data[index];
     }
 
+    // copy constructor
+    Vector(const Vector& old) {
+        m_Size = old.m_Size;
+        m_Capacity = old.m_Capacity;
+        m_Data = new T[old.m_Capacity];
+        for (size_t i = 0; i < m_Size; i++) {
+            m_Data[i] = old.m_Data[i];
+        }
+    }
+
 private:
     void ReAlloc(size_t newCapacity) {
         // 1. allocate a new block of memory
@@ -114,6 +124,16 @@ int main() {
     Vector<std::string> a;
     a.PushBack("ashwani");
     a.PushBack("yadav");
+    for (int i = 0; i < a.Size(); i++) {
+        cout << a[i] << endl;
+    }
+
+    Vector<std::string> aCopy = a;
+    aCopy[0] = "ash";
+    for (int i = 0; i < a.Size(); i++) {
+        cout << aCopy[i] << endl;
+    }
+
     for (int i = 0; i < a.Size(); i++) {
         cout << a[i] << endl;
     }
